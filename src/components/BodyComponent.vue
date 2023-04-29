@@ -47,16 +47,7 @@
           </div>
           <div class="modal-body">
             <form>
-              <div class="mb-3">
-                <label for="idInput" class="form-label">Id</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="idInput"
-                  placeholder="Id"
-                  v-model="formData.id"
-                />
-              </div>
+             
               <div class="mb-3">
                 <label for="nameInput" class="form-label">Name</label>
                 <input
@@ -110,6 +101,7 @@ export default {
   },
   methods: {
     addStudent(e) {
+    this.formData.id = this.students[students.length-1].id + 100
       this.students.push(this.formData);
       this.formData = {};
       document.querySelector(".btn-close").click();
